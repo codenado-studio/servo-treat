@@ -1,0 +1,366 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(6px);
+    color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+.btn-nav {
+    background-color: #94d2bd;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: #003049;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #94d2bd;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #0f9b8e, #005f73);
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+	overflow: hidden;
+}
+
+.slide {
+ position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* IMPORTANT FIX */
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+}
+
+/* Hero Text */
+.hero-content {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+
+
+/* Navigation Arrows */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 3;
+    border-radius: 50%;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.prev:hover, .next:hover {
+    background: #0f9b8e;
+}
+
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 95, 115, 0.4);
+}
+
+/* Services */
+.services {
+    padding: 80px 8%;
+    text-align: center;
+    background-color: #f1fafa;
+}
+
+.services h2 {
+    margin-bottom: 40px;
+    color: #005f73;
+}
+
+.service-grid {
+    display: grid;
+   grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-top: 4px solid #0f9b8e;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    color: #0f9b8e;
+    margin-bottom: 10px;
+}
+
+/* About */
+.about {
+    padding: 80px 8%;
+    background: linear-gradient(90deg, #005f73, #0f9b8e);
+    color: white;
+    text-align: center;
+}
+
+/* Contact */
+.contact {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: #0f9b8e;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(15, 155, 142, 0.2);
+}
+
+.contact textarea {
+    resize: none;
+    height: 120px;
+}
+
+footer {
+    background: #001f2f;
+    color: #bbb;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+}
+
+/* Certifications Section */
+.certifications {
+    background: #f8fcfc;
+    text-align: center;
+}
+
+.certifications h2 {
+    color: #005f73;
+    margin-bottom: 15px;
+}
+
+.cert-subtext {
+    margin-bottom: 50px;
+    color: #555;
+    font-size: 17px;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.cert-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.cert-card img {
+    height: 70px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+.cert-card h3 {
+    color: #0f9b8e;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.cert-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.about {
+    background: linear-gradient(90deg, #005f73, #0f9b8e);
+    color: white;
+    text-align: center;
+}
+
+.about h2 {
+    margin-bottom: 50px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.about-card {
+    background: rgba(255,255,255,0.1);
+    padding: 30px 25px;
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.18);
+}
+
+.about-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.about-card p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    display: block;
+}
